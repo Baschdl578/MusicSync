@@ -49,7 +49,8 @@ public class Settings extends Activity {
         checkButton.setClickable(false);
         EditText serverAddress = (EditText) findViewById(R.id.serveraddress);
         if (serverAddress.getText().toString() == null) {
-            //Popup keine Adresse
+            NoAddressDialog nad = new NoAddressDialog();
+            nad.show();
             return;
         }
         String path = serverAddress.getText().toString();

@@ -17,5 +17,7 @@
     <string name="wifi_network">WIFI Network</string>
     <string name="current">Current</string>
     <string name="server_expl">Enter the IP and directory of the remote folder here like this:\n//IP Address/Path/</string>
+    <string name="no_server_entered">Please enter a server first</string>
+    <string name="ok">OK</string>
 
 </resources>
