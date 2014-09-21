@@ -4,6 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 
 public class Settings extends Activity {
@@ -36,4 +43,47 @@ public class Settings extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void checkServer(View view) {
+        Button checkButton = (Button) findViewById(R.id.server_check_button);
+        checkButton.setClickable(false);
+        EditText serverAddress = (EditText) findViewById(R.id.serveraddress);
+        if (serverAddress.getText().toString() == null) {
+            //Popup keine Adresse
+            return;
+        }
+        String path = serverAddress.getText().toString();
+        String ipAddress = path.substring(2, path.indexOf("/", 3));
+
+        try
+        {
+            InetAddress inet = InetAddress.getByName(ipAddress);
+            boolean status = inet.isReachable(5000); //Timeout = 5000 milli seconds
+
+            if (status)
+            {
+                if (checkFolder(view)) {
+                    //popup reachable
+                }
+            }
+            else
+            {
+                //popup unreachable
+            }
+        }
+        catch (UnknownHostException e)
+        {
+            //popup unreachable
+        }
+        catch (IOException e)
+        {
+            //popup unreachable
+        }
+        //check folder
+    }
+
+    private boolean checkFolder(View view) {
+        return false;
+    }
+
 }

@@ -7,5 +7,15 @@
     <string name="service_stop">Stop Service</string>
     <string name="server_address">Server Address</string>
     <string name="check">Check</string>
+    <string name="check_long">Check</string>
+    <string name="local_folder">Local Folder</string>
+    <string name="credentials">Credentials</string>
+    <string name="credentials_opt">Credentials (optional)</string>
+    <string name="user">Username</string>
+    <string name="password">Password</string>
+    <string name="save">Save</string>
+    <string name="wifi_network">WIFI Network</string>
+    <string name="current">Current</string>
+    <string name="server_expl">Enter the IP and directory of the remote folder here like this:\n//IP Address/Path/</string>
 
 </resources>
